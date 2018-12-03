@@ -1,0 +1,11 @@
+name = "VoltageControl"
+uuid = "5fe95a40-ee39-11e8-03b1-4f605f4c4cf9"
+authors = ["Connor Hayward <connor.hayward@hotmail.co.uk>"]
+version = "0.1.0"
+
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+KeithleyControl = "6ee92c8e-ecd1-11e8-2613-0b91eb4cf327"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
+iSeqControl = "5b939232-ecb1-11e8-1da1-03f4c8ef061c"
