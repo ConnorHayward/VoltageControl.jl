@@ -16,14 +16,6 @@ uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 deps = ["LinearAlgebra", "Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
 
-[[KeithleyControl]]
-deps = ["Sockets"]
-git-tree-sha1 = "90851347a4aeb301baaf34972e20027d73b7cf87"
-repo-rev = "master"
-repo-url = "https://github.com/ConnorHayward/KeithleyControl.jl"
-uuid = "6ee92c8e-ecd1-11e8-2613-0b91eb4cf327"
-version = "0.1.0"
-
 [[LibGit2]]
 uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"
 
@@ -89,10 +81,3 @@ uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 [[Unicode]]
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
-[[iSeqControl]]
-deps = ["Sockets"]
-git-tree-sha1 = "31184beee442fc0f1d40d746da3557c1ec92746e"
-repo-rev = "master"
-repo-url = "https://github.com/ConnorHayward/iSeqControl.jl"
-uuid = "5b939232-ecb1-11e8-1da1-03f4c8ef061c"
-version = "0.1.0"

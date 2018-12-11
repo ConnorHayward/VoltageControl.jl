@@ -486,30 +486,31 @@ Shows the module state of the device.
 'channel' can be ':A' or ':B' (channel 1 or 2).
 """
 function show_module_status(device::NHQ_Module, channel::Symbol)
-    b = bits(get_module_status(device, channel))
-    if (b[1] == 1) println("QUA: Quality of output voltage not given at present") end
-    if (b[2] == 1) println("ERR: Maximum voltage or current was exceeded") end
-    if (b[3] == 1)
+    b = bitstring(get_module_status(device, channel))
+
+    if (b[1] == '1') println("QUA: Quality of output voltage not given at present") end
+    if (b[2] == '1') println("ERR: Maximum voltage or current was exceeded") end
+    if (b[3] == '1')
         println("INH: INHIBIT signal was/is active")
     else
         println("INH: INHIBIT signal was/is inactive")
     end
-    if (b[4] == 1)
+    if (b[4] == '1')
         println("KILL_ENA: Kill enabled is on")
     else
         println("KILL_ENA: Kill enabled is off")
     end
-    if (b[5] == 1)
+    if (b[5] == '1')
         println("OFF: Front panel HV-ON switch in OFF position")
     else
         println("OFF: Front panel HV-ON switch in ON position")
     end
-    if (b[6] == 1)
+    if (b[6] == '1')
         println("POL: Polarity set to positive")
     else
         println("POL: Polarity set to negative")
     end
-    if (b[7] == 1)
+    if (b[7] == '1')
         println("MAN: Control: manual")
     else
         println("MAN: Control: via RS-232 interface")
