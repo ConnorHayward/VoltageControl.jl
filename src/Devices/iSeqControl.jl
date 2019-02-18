@@ -469,7 +469,7 @@ end
 
 export show_auto_start_state
 
-function set_auto_start_state(device::NHQ_Module,channel::Symbol,state::Int)
+function set_auto_start_state(device::NHQ_Module,channel::Symbol,value::Int)
     chn = get_channel(channel)
     cmd = "A1=$((lpad(value, 1, "0")))"
     set(device, cmd)
