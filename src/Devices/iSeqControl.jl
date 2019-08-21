@@ -18,12 +18,6 @@ struct NHQ_206L <: Device
         device = new(name, ip, port)
         return device
     end
-
-    function Base.show(io::IO, device::NHQ_206L)
-      for n in fieldnames(typeof(device))
-        println(io, "$n: $(getfield(device,n))")
-      end
-    end
 end
 
 export NHQ_206L
@@ -48,16 +42,19 @@ struct NHQ_226L <: Device
         device = new(name, ip, port)
         return device
     end
-
-    function Base.show(io::IO, device::NHQ_226L)
-      for n in fieldnames(typeof(device))
-        println(io, "$n: $(getfield(device,n))")
-      end
-    end
 end
-const NHQ_Module = Union{NHQ_206L, NHQ_226L}
 
 export NHQ_226L
+
+const NHQ_Module = Union{NHQ_206L, NHQ_226L}
+
+function Base.show(io::IO, device::NHQ_Module)
+  typeof(device) == NHQ_206L ? println("NHQ_206L") : nothing
+  typeof(device) == NHQ_226L ? println("NHQ_226L") : nothing
+  for n in fieldnames(typeof(device))
+    println(io, "$n: $(getfield(device,n))")
+  end
+end
 
 """
     query(device, cmd,timeout=1.0)
