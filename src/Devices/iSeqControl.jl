@@ -518,3 +518,11 @@ function show_module_status(device::NHQ_Module, channel::Symbol)
     nothing
 end
 export show_module_status
+
+function voltage_goto(device::NHQ_Module, channel::Symbol,value::Real)
+    set_voltage(device,channel,value)
+    println("voltage set to $value")
+    sleep(2)
+    println("starting ramp...")
+    start_voltage_ramp(device,channel)
+end
