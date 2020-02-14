@@ -54,6 +54,7 @@ function Base.show(io::IO, device::NHQ_Module)
   for n in fieldnames(typeof(device))
     println(io, "$n: $(getfield(device,n))")
   end
+
 end
 
 """
@@ -532,3 +533,4 @@ function voltage_goto(device::NHQ_Module, channel::Symbol,value::Real)
     println("starting ramp...")
     start_voltage_ramp(device,channel)
 end
+export voltage_goto
